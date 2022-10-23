@@ -8,3 +8,4 @@ connection.once('open', async () => {
     console.log('connected');
     await thought.deleteMany({});
     await User.deleteMany({});
+})

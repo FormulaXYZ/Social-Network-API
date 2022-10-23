@@ -6,7 +6,7 @@ module.exports = {
             .then((thoughts) => res.json(thoughts))
             .catch((err) => res.status(500).json(err));
     },
-    getSinglethought(req, res) {
+    getSingleThought(req, res) {
         thought.findOne({ _id: req.params.thoughtId })
             .then((thought) =>
                 !thought
@@ -16,7 +16,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     // create a new thought
-    createthought(req, res) {
+    createThought(req, res) {
         thought.create(req.body)
             .then((thought) => {
                 return User.findOneAndUpdate(
@@ -74,7 +74,7 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
     // Add a  response
-    addthoughtResponse(req, res) {
+    addThoughtResponse(req, res) {
         thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
             { $addToSet: { responses: req.body } },

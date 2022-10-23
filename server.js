@@ -13,11 +13,8 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(routes);
 
-mongoose.connect('mongodb://localhost/socialize', {
-    useFinfAndModify: false,
-    useNewUrlParser: true,
 
-});
-mongoose.ser('debug', true);
+db.once('open', () => {
 
-app.listen(PORT, () => console.log(`connected to localhost:${PORT}`))
+    app.listen(PORT, () => console.log(`connected to localhost:${PORT}`))
+})

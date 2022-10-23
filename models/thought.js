@@ -1,13 +1,13 @@
-const { Schema, Types, Model } = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const responseeSchema = new Schema(
+const reactSchema = new Schema(
     {
-        responseId: {
+        reactId: {
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId(),
         },
-        responseBody: {
+        reactBody: {
             type: String,
             required: true,
             maxlength: 300,
@@ -54,7 +54,7 @@ const thoughtSchema = new Schema(
             default: Date.now,
             get: createdAtVal => dateFormat(createdAtVal)
         },
-        responses: [responseeSchema]
+        reacts: [reactSchema]
     },
     {
         toJSON: {
@@ -64,8 +64,8 @@ const thoughtSchema = new Schema(
         id: false,
     }
 );
-thoughtSchema.virtual('responseCount').get(function () {
-    return this.response.length;
+thoughtSchema.virtual('reactCount').get(function () {
+    return this.reacts.length;
 })
-const thought = Model('thought', thoughtSchema);
-module.exports = thought;
+const Thought = model('thought', thoughtSchema);
+module.exports = Thought;

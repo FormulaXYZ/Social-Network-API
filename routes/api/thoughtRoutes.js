@@ -7,7 +7,7 @@ const {
     deleteThought,
     addThoughtResponse,
     removeThoughtResponse,
-} = require('../../controllers/videoController');
+} = require('../../controllers/thoughtController');
 // /api/thought
 router.route('/').get(getThoughts).post(createThought);
 // /api/thoughts/:thoughtId
