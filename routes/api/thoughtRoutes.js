@@ -9,7 +9,21 @@ const {
     removeThoughtResponse,
 } = require('../../controllers/videoController');
 // /api/thought
-router.route('/').get(getThought).post(createThought);
+router.route('/').get(getThoughts).post(createThought);
+// /api/thoughts/:thoughtId
+router
+    .route('/:thoughtId')
+    .get(getSingleThought)
+    .put(updateThought)
+    .delete(deleteThought);
+
+// /api/videos/:videoId/responses
+router.route('/:thoughtId/responses').post(addThoughtResponse);
+
+// /api/thoughts/:thoughtId/responses/:responseId
+router.route('/:thoughtId/responses/:responseId').delete(removeThoughtResponse);
+
+module.exports = router;
 
 
 
