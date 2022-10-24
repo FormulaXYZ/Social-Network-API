@@ -39,12 +39,12 @@ module.exports = {
     },
     updateThought(req, res) {
         thought.findOneAndUpdate(
-            { _id: req.params.videoId },
+            { _id: req.params.thoughtId },
             { $set: req.body },
             { runValidators: true, new: true }
         )
             .then((thought) =>
-                !video
+                !thought
                     ? res.status(404).json({ message: 'No thought with this id!' })
                     : res.json(thought)
             )
