@@ -25,9 +25,9 @@ router.route('/:thoughtId/responses').post(addThoughtResponse);
 // /api/thoughts/:thoughtId/react/:reactId
 router.route('/:thoughtId/responses/:responseId').delete(removeThoughtResponse);
 
-router.route('/:thoughtId/response').post(addReact);
+router.route('/:thoughtId/reacts').post(addReact);
 
-router.route('/:thoughtId/responses/:responseId').delete(removeReact);
+router.route('/:thoughtId/reacts/:reactId').delete(removeReact);
 
 module.exports = router;
 

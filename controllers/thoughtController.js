@@ -107,32 +107,33 @@ module.exports = {
         console.log(req.body);
         thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $addToSet: { reacs: req.params.reactId } },
+            { $addToSet: { reacts: req.body } },
             { runValidators: true, new: true }
         )
-            .then((thought) =>
+            .then((thought) => {
+
                 !thought
                     ? res
                         .status(404)
                         .json({ message: 'No thought found with that ID :(' })
                     : res.json(thought)
-            )
+            })
             .catch((err) => res.status(500).json(err));
     },
     // Remove reaction fron a thought
     removeReact(req, res) {
-        User.findOneAndUpdate(
+        thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $pull: { reacts: req.params.reactId } },
+            { $pull: { reacts: { reactId: req.params.reactId } } },
             { runValidators: true, new: true }
         )
-            .then((thought) =>
+            .then((thought) => {
                 !thought
                     ? res
                         .status(404)
                         .json({ message: 'No react found with that ID :(' })
-                    : res.json(user)
-            )
+                    : res.json(thought)
+            })
             .catch((err) => res.status(500).json(err));
     },
 };
