@@ -2,10 +2,10 @@
 
 [Link](https://drive.google.com/file/d/19G_HA_GX6Zqvn05OLhIp1-sf0P0SLJdr/view)
 
-    ![screenshot](./images/social1.png)
-    ![screenshot](./images/social2.png)
-    ![screenshot](./images/social3.png)
-    ![screenshot](./images/social4.png)
+![screenshot1](./images/social1.png)
+![screenshot2](./images/social2.png)
+![screenshot3](./images/social3.png)
+![screenshot4](./images/social4.png)
 
 ## Description
 
