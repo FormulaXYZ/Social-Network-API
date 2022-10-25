@@ -1,11 +1,11 @@
-# NoSQL: Social Network API
+# NoSQL Social Network API
 
-     [video link](https://drive.google.com/file/d/19G_HA_GX6Zqvn05OLhIp1-sf0P0SLJdr/view)
+[Link](https://drive.google.com/file/d/19G_HA_GX6Zqvn05OLhIp1-sf0P0SLJdr/view)
 
-    ![screenshot-1](./images/social1.png)
-    ![screenshot-2](./images/social2.png)
-    ![screenshot-3](./images/social3.png)
-    ![screenshot-4](./images/social4.png)
+    ![screenshot](./images/social1.png)
+    ![screenshot](./images/social2.png)
+    ![screenshot](./images/social3.png)
+    ![screenshot](./images/social4.png)
 
 ## Description
 
